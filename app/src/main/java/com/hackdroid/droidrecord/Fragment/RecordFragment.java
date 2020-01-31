@@ -84,6 +84,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
                     //stop recording
                     isRecording = false;
                     stopRecording();
+                    recordBtn.setImageDrawable(getResources().getDrawable(R.drawable.mic));
                 } else {
 
                     //start recoding
@@ -114,11 +115,13 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
         /**
          * @alert the file output name that has been saved
          */
-        showAlert.alert(recordFile +" has been saved to your mobile");
+        showAlert.alert(recordFile + " has been saved to your mobile");
 
     }
 
     private void startRecording() {
+        recordBtn.setImageDrawable(getResources().getDrawable(R.drawable.mic_disable));
+
         recordFragmentTimer.setBase(SystemClock.elapsedRealtime());
         recordFragmentTimer.start();
 
