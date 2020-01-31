@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/recordFragment">
+
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.hackdroid.droidrecord.Fragment.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record">
+        <action
+            android:id="@+id/action_recordFragment_to_recordsListFragment"
+            app:destination="@id/recordsListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordsListFragment"
+        android:name="com.hackdroid.droidrecord.Fragment.RecordsListFragment"
+        android:label="fragment_records_list"
+        tools:layout="@layout/fragment_records_list" />
+</navigation>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.RecordFragment">
+
+    <ImageView
+        android:id="@+id/recordFragmentImage"
+        android:layout_width="@dimen/size_220"
+        android:layout_height="@dimen/size_220"
+        android:layout_marginTop="@dimen/size_64"
+        android:src="@drawable/songs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <TextView
+        android:id="@+id/recordFragmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_24"
+        android:fontFamily="monospace"
+        android:text="@string/records_text"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recordFragmentImage">
+
+    </TextView>
+
+    <Chronometer
+        android:id="@+id/recordFragmentTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_24"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="@dimen/size_64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recordFragmentText">
+
+    </Chronometer>
+
+    <ImageButton
+        android:id="@+id/recordFragmentButton"
+        android:layout_width="@dimen/size_64"
+        android:layout_height="@dimen/size_64"
+        android:layout_marginTop="@dimen/size_64"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recordFragmentTimer">
+
+    </ImageButton>
+
+    <ImageView
+        android:id="@+id/listRecords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8sp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/menu"
+        app:layout_constraintBottom_toBottomOf="@id/recordFragmentButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recordFragmentButton"
+        app:layout_constraintTop_toTopOf="@id/recordFragmentButton"></ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

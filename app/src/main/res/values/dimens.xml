@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_220">220sp</dimen>
+    <dimen name="size_64">64sp</dimen>
+    <dimen name="size_24">24sp</dimen>
+    <dimen name="size_120">120sp</dimen>
+</resources>
