@@ -86,6 +86,7 @@ public class RecordsListFragment extends Fragment {
          * if file length is less than 1
          * don't show recyclerview
          * */
+
         if (allFile.length < 1) {
             alert.alert("No Recoding found");
         }
