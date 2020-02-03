@@ -19,11 +19,13 @@ public class RecordingAdapter extends RecyclerView.Adapter<RecordingAdapter.View
     File[] files;
     Activity activity;
     Context context;
+    private OnItemClick onItemClick;
 
-    public RecordingAdapter(File[] files, Activity activity, Context context) {
+    public RecordingAdapter(File[] files, Activity activity, Context context, OnItemClick onItemClick) {
         this.files = files;
         this.activity = activity;
         this.context = context;
+        this.onItemClick = onItemClick;
     }
 
     @NonNull
@@ -45,14 +47,25 @@ public class RecordingAdapter extends RecyclerView.Adapter<RecordingAdapter.View
         return files.length;
     }
 
-    public class Viewholder extends RecyclerView.ViewHolder {
+    public class Viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name, time;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             time = itemView.findViewById(R.id.time);
+            itemView.setOnClickListener(this);
 
         }
+
+        @Override
+        public void onClick(View v) {
+            onItemClick.onAudioItemClick(files[getAdapterPosition()], getAdapterPosition());
+
+        }
+    }
+
+    public interface OnItemClick {
+        void onAudioItemClick(File file, int position);
     }
 }
